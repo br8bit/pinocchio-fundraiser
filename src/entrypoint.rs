@@ -1,8 +1,11 @@
 use pinocchio::{
-    ProgramResult, account_info::AccountInfo, program_error::ProgramError, pubkey::Pubkey,
+    account_info::AccountInfo, entrypoint, program_error::ProgramError, pubkey::Pubkey,
+    ProgramResult,
 };
 
 use crate::instructions::{self, ProgramInstruction};
+
+entrypoint!(process_instruction);
 
 pub fn process_instruction(
     _program_id: &Pubkey,
