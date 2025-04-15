@@ -1,5 +1,3 @@
-use pinocchio::pubkey::{Pubkey, find_program_address};
-
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Default, PartialEq)]
 pub struct Contributor {
@@ -17,13 +15,7 @@ impl Contributor {
     }
 
     #[inline(always)]
-    pub fn initialize(
-        &mut self,
-        Contributor {
-            amount,
-            is_initialized,
-        }: Contributor,
-    ) {
+    pub fn initialize(&mut self, amount: u64) {
         self.is_initialized = true;
         self.amount = amount;
     }
