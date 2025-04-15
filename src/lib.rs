@@ -1,4 +1,5 @@
 #![no_std]
+
 use pinocchio_pubkey::declare_id;
 
 mod constants;
