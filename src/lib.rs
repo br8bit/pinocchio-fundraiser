@@ -1,4 +1,5 @@
 #![no_std]
+#![allow(unexpected_cfgs)]
 
 use pinocchio_pubkey::declare_id;
 
