@@ -9,14 +9,14 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let (discriminator, rest) = instruction_data
+    let (discriminator, data) = instruction_data
         .split_first()
         .ok_or(ProgramError::InvalidInstructionData)?;
 
     match ProgramInstruction::unpack(discriminator)? {
-        ProgramInstruction::Initialize => instructions::initialize::process(accounts, rest),
-        ProgramInstruction::Checker => instructions::checker::process(accounts, rest),
-        ProgramInstruction::Contribute => instructions::contribute::process(accounts, rest),
-        ProgramInstruction::Refund => instructions::refund::process(accounts, rest),
+        ProgramInstruction::Initialize => instructions::initialize::process(accounts, data),
+        ProgramInstruction::Checker => instructions::checker::process(accounts, data),
+        ProgramInstruction::Contribute => instructions::contribute::process(accounts, data),
+        ProgramInstruction::Refund => instructions::refund::process(accounts, data),
     }
 }
