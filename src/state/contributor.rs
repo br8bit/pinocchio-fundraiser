@@ -6,7 +6,7 @@ pub struct Contributor {
 }
 
 impl Contributor {
-    pub const CONTRIBUTOR_SEED: &[u8] = b"contributor";
+    pub const CONTRIBUTOR_SEED: &'static [u8] = b"contributor";
     pub const LEN: usize = core::mem::size_of::<Self>();
 
     #[inline(always)]

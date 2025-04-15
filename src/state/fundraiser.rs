@@ -1,4 +1,4 @@
-use pinocchio::pubkey::{Pubkey, find_program_address};
+use pinocchio::pubkey::{find_program_address, Pubkey};
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq)]
@@ -14,7 +14,7 @@ pub struct Fundraiser {
 }
 
 impl Fundraiser {
-    pub const FUNDRAISER_SEED: &[u8] = b"fundraiser";
+    pub const FUNDRAISER_SEED: &'static [u8] = b"fundraiser";
     pub const LEN: usize = core::mem::size_of::<Self>();
 
     #[inline(always)]
